@@ -11,6 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
+/**
+ * MainActivity handles background color changes based on user selection.
+ * It supports both automatic updates (via Switch) and manual updates (via Button).
+ *
+ * @author Amit Elad
+ * @version 1.0
+ * @since 2024-06-11
+ */
 public class MainActivity extends AppCompatActivity {
     private Button btn;
     private RadioButton rg1, rg2, rg3, rg4;
@@ -18,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private ConstraintLayout main;
 
+    /**
+     * Called when the activity is starting. This is where most initialization should go.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
     }
 
-    // Helper method to just change the color based on radio group selection
+    /**
+     * Applies the selected background color based on the checked RadioButton in the RadioGroup.
+     */
     private void applyColor() {
         int id = radioGroup.getCheckedRadioButtonId();
         if (id == R.id.rg1) {
@@ -47,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Handles clicks on the Switch or RadioButtons.
+     * Changes the background color automatically if the Switch is checked.
+     * @param view The view that was clicked.
+     */
     public void click(View view) {
         if (sW.isChecked()) {
             applyColor();
@@ -56,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Handles the click event for the 'Change' button.
+     * Always applies the selected color, regardless of the Switch state.
+     * @param view The view that was clicked.
+     */
     public void clicked(View view) {
         applyColor();
     }
