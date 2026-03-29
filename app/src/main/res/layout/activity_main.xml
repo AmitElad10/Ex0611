@@ -13,6 +13,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="96dp"
         android:layout_marginBottom="34dp"
+        android:onClick="click"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,24 +33,28 @@
             android:id="@+id/rg1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="White" />
 
         <RadioButton
             android:id="@+id/rg2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="Green" />
 
         <RadioButton
             android:id="@+id/rg3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="Blue" />
 
         <RadioButton
             android:id="@+id/rg4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="Red" />
     </RadioGroup>
 
